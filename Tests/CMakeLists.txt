@@ -1,0 +1,8 @@
+add_executable(FalconBlockStateUpdaterTests BlockStateUpgraderTests.cpp)
+
+target_link_libraries(FalconBlockStateUpdaterTests PRIVATE FalconBlockStateUpdater)
+
+target_compile_definitions(FalconBlockStateUpdaterTests PRIVATE
+    FALCON_BLOCK_UPGRADE_SCHEMA_DIR="${FALCON_BLOCK_UPGRADE_SCHEMA_DIR}")
+
+add_test(NAME FalconBlockStateUpdaterTests COMMAND FalconBlockStateUpdaterTests)
