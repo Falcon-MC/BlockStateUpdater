@@ -53,8 +53,8 @@ namespace {
     }
 
     void testLoading(const BlockStateUpgrader &upgrader, size_t schemaFileCount) {
-        check(schemaFileCount == 36, "36 schema files loaded");
-        check(upgrader.getSchemaCount() == 36, "36 schemas registered");
+        check(schemaFileCount == 37, "37 schema files loaded");
+        check(upgrader.getSchemaCount() == 37, "37 schemas registered");
 
         const std::vector<BlockStateUpgradeSchema> limited = BlockStateUpgrader::loadSchemas(
                 FALCON_BLOCK_UPGRADE_SCHEMA_DIR, 11);
