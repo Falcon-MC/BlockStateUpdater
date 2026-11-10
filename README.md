@@ -47,8 +47,8 @@ order, then in schema ID order (the four digit file name prefix) inside a versio
   old block name and the old property names.
 - The upgraded state always carries the newest schema version.
 
-Old states stored as a legacy numeric id and meta value are not handled; they need the id and meta mapping tables
-before they can be upgraded.
+Old states stored as a legacy numeric id and meta value go through `LegacyBlockStates` first: it turns them into
+1.12 states with the tables in [`Legacy/`](Legacy), and the upgrader takes them from there.
 
 ## Usage
 
@@ -94,5 +94,5 @@ ctest --test-dir build --output-on-failure
 
 ## License
 
-The code is LGPL-3.0, see [LICENSE](LICENSE) and [COPYING](COPYING). The schema files are CC0 1.0, see
-[Schemas/LICENSE](Schemas/LICENSE).
+The code is LGPL-3.0, see [LICENSE](LICENSE) and [COPYING](COPYING). The schema files and the legacy tables are CC0
+1.0, see [Schemas/LICENSE](Schemas/LICENSE) and [Legacy/LICENSE](Legacy/LICENSE).

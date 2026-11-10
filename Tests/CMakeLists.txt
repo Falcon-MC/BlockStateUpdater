@@ -6,3 +6,13 @@ target_compile_definitions(FalconBlockStateUpdaterTests PRIVATE
     FALCON_BLOCK_UPGRADE_SCHEMA_DIR="${FALCON_BLOCK_UPGRADE_SCHEMA_DIR}")
 
 add_test(NAME FalconBlockStateUpdaterTests COMMAND FalconBlockStateUpdaterTests)
+
+add_executable(FalconLegacyBlockStatesTests LegacyBlockStatesTests.cpp)
+
+target_link_libraries(FalconLegacyBlockStatesTests PRIVATE FalconBlockStateUpdater)
+
+target_compile_definitions(FalconLegacyBlockStatesTests PRIVATE
+    FALCON_BLOCK_UPGRADE_SCHEMA_DIR="${FALCON_BLOCK_UPGRADE_SCHEMA_DIR}"
+    FALCON_BLOCK_UPGRADE_LEGACY_DIR="${FALCON_BLOCK_UPGRADE_LEGACY_DIR}")
+
+add_test(NAME FalconLegacyBlockStatesTests COMMAND FalconLegacyBlockStatesTests)

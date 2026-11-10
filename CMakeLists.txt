@@ -26,6 +26,9 @@ endif()
 set(FALCON_BLOCK_UPGRADE_SCHEMA_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Schemas
     CACHE INTERNAL "Directory containing the block state upgrade schema files")
 
+set(FALCON_BLOCK_UPGRADE_LEGACY_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Legacy
+    CACHE INTERNAL "Directory containing the legacy numeric id and meta tables")
+
 file(GLOB_RECURSE FALCON_BLOCK_STATE_UPDATER_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 
 add_library(FalconBlockStateUpdater STATIC ${FALCON_BLOCK_STATE_UPDATER_SOURCES})
