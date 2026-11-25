@@ -53,7 +53,8 @@ Old states stored as a legacy numeric id and meta value go through `LegacyBlockS
 ## Usage
 
 The library is a plain CMake target named `FalconBlockStateUpdater`. It depends on
-[Falcon NBT](https://github.com/Falcon-MC/NBT), which is fetched automatically. The CMake variable
+[Falcon.Shared](https://github.com/Falcon-MC/Falcon/tree/dev/Falcon.Shared) from the Falcon repository, which is
+fetched automatically. The CMake variable
 `FALCON_BLOCK_UPGRADE_SCHEMA_DIR` points to the schema directory.
 
 ```cmake
@@ -83,11 +84,11 @@ BlockStateData upgraded = upgrader.upgrade(BlockStateData("minecraft:wool", stat
 
 ## Building
 
-Only CMake 3.16+ and a C++17 compiler are required. To build against a local Falcon NBT checkout instead of the
-GitHub repository, set `FALCON_NBT_SOURCE_DIR`:
+Only CMake 3.16+ and a C++17 compiler are required. To build against a local Falcon checkout instead of the
+GitHub repository, set `FALCON_SOURCE_DIR`:
 
 ```
-cmake -B build -G Ninja -DFALCON_NBT_SOURCE_DIR=../Falcon-NBT
+cmake -B build -G Ninja -DFALCON_SOURCE_DIR=../Falcon
 cmake --build build
 ctest --test-dir build --output-on-failure
 ```
